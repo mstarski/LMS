@@ -1,0 +1,10 @@
+<h1>Add a Collection</h1>
+<%= form_with scope: :collection, url: collections_path, local: true do |form|
+%>
+<p>
+	<%= form.label :name %> <%= form.text_field :name %>
+</p>
+<p>
+	<%= form.label :size %> <%= form.number_field :size %>
+</p>
+<%= form.submit %> <% end %>
