@@ -4,7 +4,7 @@
 	<%= form.label :name %> <%= form.text_field :name %>
 </p>
 <p>
-	<%= form.select :collection_id, options_for_select(@collections.map {
-	|collection| [collection.name, collection.collection_id] }) %>
+	<%= form.select :collection_id, @collections.map { |collection|
+	[collection.name, collection.id] } %>
 </p>
 <%= form.submit %> <% end %>

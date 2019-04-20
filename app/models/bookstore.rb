@@ -1,3 +1,3 @@
 class Bookstore < ApplicationRecord
-    has_one :collection
+    belongs_to :collection
 end

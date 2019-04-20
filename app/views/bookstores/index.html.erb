@@ -5,4 +5,21 @@
 			<a href="/bookstores/new">Add a bookstore</a>
 		</li>
 	</ul>
+
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Collection</th>
+			<th>Created at</th>
+		</thead>
+		<tbody>
+			<% @bookstores.each do |bookstore| %>
+			<tr>
+				<td><%= bookstore.name %></td>
+				<td><%= bookstore.collection.name %></td>
+				<td><%= bookstore.created_at %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
 </nav>
