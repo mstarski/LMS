@@ -1,0 +1,23 @@
+<h1>Authors</h1>
+<nav>
+  <ul>
+    <li>
+      <a href="/author/new">Add an author</a>
+    </li>
+  </ul>
+</nav>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Surname</th>
+  </thead>
+  <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.name %></td>
+        <td><%= author.surname %></td>
+        <td><%= author.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

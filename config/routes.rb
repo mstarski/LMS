@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'homepage#index'
 
   #Resources
-  resources :bookstores, :collections, :books
+  resources :bookstores, :collections, :books, :authors
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
