@@ -1,10 +1,10 @@
 <h1>Add a bookstore</h1>
 <%= form_with scope: :bookstore, url: bookstores_path, local: true do |form|%>
-<p>
-	<%= form.label :name %> <%= form.text_field :name %>
-</p>
-<p>
-	<%= form.select :collection_id, @collections.map { |collection|
+  <p>
+    <%= form.label :name %> <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.select :collection_id, @collections.map { |collection|
 	[collection.name, collection.id] } %>
-</p>
-<%= form.submit %> <% end %>
+  </p>
+  <%= form.submit %> <% end %>
