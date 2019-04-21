@@ -1,0 +1,23 @@
+<h1>Books</h1>
+<nav>
+	<ul>
+		<li>
+			<a href="/books/new">Add a book</a>
+		</li>
+	</ul>
+</nav>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Created at</th>
+	</thead>
+	<tbody>
+		<% @books.each do |book| %>
+		<tr>
+			<td><%= book.title %></td>
+			<td><%= book.created_at %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

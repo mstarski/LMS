@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2019_04_20_155610) do
 
   create_table "authors", force: :cascade do |t|
-    t.integer "author_id"
     t.string "name"
     t.string "surname"
     t.datetime "created_at", null: false
@@ -21,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_04_20_155610) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.integer "book_id"
     t.string "title"
     t.date "publish_date"
     t.datetime "created_at", null: false
@@ -29,7 +27,6 @@ ActiveRecord::Schema.define(version: 2019_04_20_155610) do
   end
 
   create_table "bookstores", force: :cascade do |t|
-    t.integer "bookstore_id"
     t.string "name"
     t.integer "collection_id"
     t.datetime "created_at", null: false
@@ -38,8 +35,8 @@ ActiveRecord::Schema.define(version: 2019_04_20_155610) do
   end
 
   create_table "collections", force: :cascade do |t|
-    t.integer "collection_id"
     t.integer "size"
+    t.integer "book_count", default: 0
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

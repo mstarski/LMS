@@ -6,7 +6,6 @@ class CollectionsController < ApplicationController
     def create
         @new_collection = Collection.new(collection_params)
         @new_collection.save
-
         redirect_to collections_path 
     end
     
