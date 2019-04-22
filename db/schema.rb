@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2019_04_20_155610) do
 
   create_table "collections", force: :cascade do |t|
     t.integer "size"
-    t.integer "book_count", default: 0
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

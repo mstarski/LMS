@@ -1,27 +1,26 @@
 <h1>Collections</h1>
 <nav>
-	<ul>
-		<li>
-			<a href="/collections/new">Add a collection</a>
-		</li>
-	</ul>
+  <ul>
+    <li>
+      <a href="/collections/new">Add a collection</a>
+    </li>
+  </ul>
 </nav>
-
 <table>
-	<thead>
-		<th>Name</th>
-		<th>Size</th>
-		<th>Books</th>
-		<th>Created at</th>
-	</thead>
-	<tbody>
-		<% @collections.each do |collection| %>
-		<tr>
-			<td><%= collection.name %></td>
-			<td><%= collection.size %></td>
-			<td><%= collection.book_count %></td>
-			<td><%= collection.created_at %></td>
-		</tr>
-		<% end %>
-	</tbody>
+  <thead>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Books</th>
+    <th>Created at</th>
+  </thead>
+  <tbody>
+    <% @collections.each do |collection| %>
+      <tr>
+        <td><%= collection.name %></td>
+        <td><%= collection.size %></td>
+        <td><%= collection.books.length %></td>
+        <td><%= collection.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
