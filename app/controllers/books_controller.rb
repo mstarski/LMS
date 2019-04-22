@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     end
     def new
         @book = Book.new
-        2.times { @book.authors.build }
+        @book.authors.build
     end
     def create
         @new_book = Book.new(book_params)

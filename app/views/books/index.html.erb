@@ -15,7 +15,6 @@
     <th>Title</th>
     <th>Published in</th>
     <th>Authors</th>
-    <th>Collection</th>
     <th>Created at</th>
   </thead>
   <tbody>
@@ -26,7 +25,6 @@
         <% book.authors.each do |author| %>
           <td><%= "#{author.name} #{author.surname}" %></td>
         <% end %>
-        <td><%= book.collections.blank? ? "--": book.collections.name %></td>
         <td><%= book.created_at %></td>
       </tr>
     <% end %>
