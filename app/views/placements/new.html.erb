@@ -1,0 +1,16 @@
+<h1>Add a book to the collection</h1>
+<%= form_for @placement do |form| %>
+  <p>
+    <%= form.label :book%>
+    <%= form.select :book_id, @books.map { |book| 
+        [book.title, book.id]
+    }%>
+  </p>
+  <p>
+    <%= form.label :collection%>
+    <%= form.select :collection_id, @collections.map { |collection|
+        [collection.name, collection.id]
+    }%>
+  </p>
+  <%= form.submit "Add"%>
+<% end %>
