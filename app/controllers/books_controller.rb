@@ -17,6 +17,14 @@ class BooksController < ApplicationController
     def edit
         @book = Book.find(params[:id]) 
     end
+    def update
+        @book = Book.find(params[:id])
+        if @book.update_attributes(book_params)
+            render file: '/app/views/books/edit_success.html.erb'
+        else
+            render file: '/app/views/books/edit_fail.html.erb'
+        end
+    end
     private
         def book_params
             params.require(:book).permit(:title, :publish_date, :authors_attributes => [:id, :name, :surname])
