@@ -11,6 +11,12 @@ class BooksController < ApplicationController
         @new_book.save
         redirect_to books_path
     end
+    def show
+        @book = Book.find(params[:id])
+    end
+    def edit
+        
+    end
     private
         def book_params
             params.require(:book).permit(:title, :publish_date, :authors_attributes => [:id, :name, :surname])

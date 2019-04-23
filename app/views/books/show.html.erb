@@ -1,0 +1,21 @@
+<h1><%= @book.title %></h1>
+<% @book.authors.each do |author| %>
+  <strong><%= "#{author.name} #{author.surname}" %></strong>
+<% end %>
+<p>
+  Book Id: <%= @book.id %>
+</p>
+<p>
+  Published in: <%= @book.publish_date %>
+</p>
+<p>
+  Avaliable in:
+</p>
+<ul>
+  <% @book.collections.each do |collection| %>
+    <li>
+      <%= collection.name %> (Col. id: <%= collection.id %>)
+      <%= link_to 'See bookstores that offers this collection', nil%>
+    </li>
+  <% end %>
+</ul>

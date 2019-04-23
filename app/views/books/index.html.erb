@@ -26,6 +26,9 @@
           <td><%= "#{author.name} #{author.surname}" %></td>
         <% end %>
         <td><%= book.created_at %></td>
+        <td><%= link_to 'More', book_path(book) %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: "Delete #{book.title} ?" } %></td>
       </tr>
     <% end %>
   </tbody>
