@@ -1,0 +1,25 @@
+<h2>Edit <%= @book.title %></h2>
+<%= form_for @book, url: { action: "update" } do |form|%>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :publish_date%>
+    <%= form.date_field :publish_date %>
+  </p>
+  <p>
+    <h2>Author info</h2>
+    <ul>
+      <%= form.fields_for :authors do |authors_form| %>
+        <li>
+          <%= authors_form.label :name %>
+          <%= authors_form.text_field :name %>
+          <%= authors_form.label :surname %>
+          <%= authors_form.text_field :surname %>
+        </li>
+      <% end %>
+    </ul>
+  </p>
+  <%= form.submit %>
+<% end %>
