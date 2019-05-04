@@ -8,6 +8,11 @@ class CollectionsController < ApplicationController
         @new_collection.save
         redirect_to collections_path 
     end
+
+    def associated_bookstores
+        @collection = Collection.find(params[:col_id])
+        @bookstores = @collection.bookstores
+    end
     
     private
         def collection_params

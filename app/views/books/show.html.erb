@@ -15,7 +15,7 @@
   <% @book.collections.each do |collection| %>
     <li>
       <%= collection.name %> (Col. id: <%= collection.id %>)
-      <%= link_to 'See bookstores that offers this collection', associated_bookstores_path %>
+      <%= link_to 'See bookstores that offers this collection', associated_bookstores_path(col_id: collection.id) %>
     </li>
   <% end %>
 </ul>

@@ -1,0 +1,8 @@
+<h1>Bookstores that own collection <u><%= @collection.name %></u></h1>
+<ul>
+  <% @bookstores.each do |bookstore| %>
+    <li>
+      <%= bookstore.name %> (id: <%= bookstore.id%>) <%= link_to 'Show', bookstore_path(id: bookstore.id) %>
+    </li>
+  <% end %>
+</ul>

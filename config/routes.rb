@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :placements, only: [:new, :create]
 
   #Custom routes
-  get 'books/:id/bookstores' => 'books#associated_bookstores', :as => 'associated_bookstores'
+  get 'collections/:col_id/bookstores' => 'collections#associated_bookstores', :as => 'associated_bookstores'
 end
