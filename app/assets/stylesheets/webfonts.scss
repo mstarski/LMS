@@ -1,0 +1,67 @@
+/* zilla-slab-regular - latin */
+@font-face {
+	font-family: "Zilla Slab";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/app/assets/fontszilla-slab-v4-latin-regular.eot"); /* IE9 Compat Modes */
+	src: local("Zilla Slab"), local("ZillaSlab-Regular"),
+		url("/app/assets/fontszilla-slab-v4-latin-regular.eot?#iefix")
+			format("embedded-opentype"),
+		/* IE6-IE8 */ url("/app/assets/fontszilla-slab-v4-latin-regular.woff2")
+			format("woff2"),
+		/* Super Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-regular.woff")
+			format("woff"),
+		/* Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-regular.ttf")
+			format("truetype"),
+		/* Safari, Android, iOS */
+			url("/app/assets/fontszilla-slab-v4-latin-regular.svg#ZillaSlab")
+			format("svg"); /* Legacy iOS */
+}
+
+/* zilla-slab-500 - latin */
+@font-face {
+	font-family: "Zilla Slab";
+	font-style: normal;
+	font-weight: 500;
+	src: url("/app/assets/fontszilla-slab-v4-latin-500.eot"); /* IE9 Compat Modes */
+	src: local("Zilla Slab Medium"), local("ZillaSlab-Medium"),
+		url("/app/assets/fontszilla-slab-v4-latin-500.eot?#iefix")
+			format("embedded-opentype"),
+		/* IE6-IE8 */ url("/app/assets/fontszilla-slab-v4-latin-500.woff2")
+			format("woff2"),
+		/* Super Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-500.woff") format("woff"),
+		/* Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-500.ttf")
+			format("truetype"),
+		/* Safari, Android, iOS */
+			url("/app/assets/fontszilla-slab-v4-latin-500.svg#ZillaSlab")
+			format("svg"); /* Legacy iOS */
+}
+
+/* zilla-slab-700 - latin */
+@font-face {
+	font-family: "Zilla Slab";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/app/assets/fontszilla-slab-v4-latin-700.eot"); /* IE9 Compat Modes */
+	src: local("Zilla Slab Bold"), local("ZillaSlab-Bold"),
+		url("/app/assets/fontszilla-slab-v4-latin-700.eot?#iefix")
+			format("embedded-opentype"),
+		/* IE6-IE8 */ url("/app/assets/fontszilla-slab-v4-latin-700.woff2")
+			format("woff2"),
+		/* Super Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-700.woff") format("woff"),
+		/* Modern Browsers */
+			url("/app/assets/fontszilla-slab-v4-latin-700.ttf")
+			format("truetype"),
+		/* Safari, Android, iOS */
+			url("/app/assets/fontszilla-slab-v4-latin-700.svg#ZillaSlab")
+			format("svg"); /* Legacy iOS */
+}
+
+* {
+	font-family: "Zilla Slab";
+}
