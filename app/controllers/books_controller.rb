@@ -25,6 +25,14 @@ class BooksController < ApplicationController
             render file: '/app/views/books/edit_fail.html.erb'
         end
     end
+    def destroy
+        @book = Book.find(params[:id])
+        if @book.destroy
+            render file: '/app/views/books/delete_success.html.erb'
+        else
+            render file: '/app/views/books/delete_fail.html.erb'
+        end
+    end
     private
         def book_params
             params.require(:book).permit(:title, :publish_date, :authors_attributes => [:id, :name, :surname])
