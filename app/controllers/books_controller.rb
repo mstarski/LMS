@@ -33,6 +33,11 @@ class BooksController < ApplicationController
             render file: '/app/views/books/delete_fail.html.erb'
         end
     end
+
+    def associated_bookstores
+        
+    end
+
     private
         def book_params
             params.require(:book).permit(:title, :publish_date, :authors_attributes => [:id, :name, :surname])

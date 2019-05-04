@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   #Resources
   resources :bookstores, :collections, :books, :authors
   resources :placements, only: [:new, :create]
-  
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #Custom routes
+  get 'books/:id/bookstores' => 'books#associated_bookstores', :as => 'associated_bookstores'
 end
