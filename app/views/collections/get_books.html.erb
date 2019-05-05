@@ -1,0 +1,9 @@
+<h1>Books in collection <%= link_to @collection.name, collection_path(@collection) %></h1>
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title %>
+      <%= link_to 'More', book_path(book) %>
+    </li>
+  <% end %>
+</ul>

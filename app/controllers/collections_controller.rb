@@ -13,6 +13,11 @@ class CollectionsController < ApplicationController
         @collection = Collection.find(params[:col_id])
         @bookstores = @collection.bookstores
     end
+
+    def get_books
+        @collection = Collection.find(params[:col_id])
+        @books = @collection.books
+    end
     
     private
         def collection_params
