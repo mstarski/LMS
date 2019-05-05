@@ -30,6 +30,15 @@ class BookstoresController < ApplicationController
         end
     end
 
+    def destroy
+        @bookstore = Bookstore.find(params[:id])
+        if @bookstore.destroy
+            render file: '/app/views/books/delete_success.html.erb'
+        else
+            render file: '/app/views/books/delete_fail.html.erb'
+        end
+    end
+
     private
         def bookstore_params
             params.require(:bookstore).permit(:name, :collection_id)
