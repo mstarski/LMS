@@ -1,16 +1,19 @@
 <h1>Authors</h1>
 <table>
   <thead>
-    <th>Name</th>
     <th>Surname</th>
+    <th>Name</th>
     <th>Created at </th>
   </thead>
   <tbody>
     <% @authors.each do |author| %>
       <tr>
-        <td><%= author.name %></td>
         <td><%= author.surname %></td>
+        <td><%= author.name %></td>
         <td><%= author.created_at %></td>
+        <td><%= link_to 'More', author_path(author) %></td>
+        <td><%= link_to 'Edit', edit_author_path(author) %></td>
+        <td><%= link_to 'Delete', author_path(author), method: :delete, data: { confirm: "Delete #{author.name} #{author.surname} ?" } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
-	font-family: "Zilla Slab";
+	font-family: "Zilla Slab", serif;
 }
 
 table {
 	width: 100%;
+	text-align: center;
 }
 
 .application-container {
