@@ -21,6 +21,15 @@ class BookstoresController < ApplicationController
         @collections = Collection.all
     end
 
+    def update
+        @bookstore = Bookstore.find(params[:id])
+        if @bookstore.update_attributes(bookstore_params) 
+            render file: '/app/views/books/edit_success.html.erb'
+        else
+            render file: '/app/views/books/edit_fail.html.erb'
+        end
+    end
+
     private
         def bookstore_params
             params.require(:bookstore).permit(:name, :collection_id)
