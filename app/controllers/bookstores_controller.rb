@@ -11,6 +11,10 @@ class BookstoresController < ApplicationController
 
         redirect_to bookstores_path
     end
+    
+    def show
+       @bookstore = Bookstore.find(params[:id])
+    end
 
     private
         def bookstore_params

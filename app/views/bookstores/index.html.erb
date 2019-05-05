@@ -1,25 +1,28 @@
 <h1>Bookstores</h1>
 <nav>
-	<ul>
-		<li>
-			<a href="/bookstores/new">Add a bookstore</a>
-		</li>
-	</ul>
-
-	<table>
-		<thead>
-			<th>Name</th>
-			<th>Collection</th>
-			<th>Created at</th>
-		</thead>
-		<tbody>
-			<% @bookstores.each do |bookstore| %>
-			<tr>
-				<td><%= bookstore.name %></td>
-				<td><%= bookstore.collection.name %></td>
-				<td><%= bookstore.created_at %></td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+  <ul>
+    <li>
+      <a href="/bookstores/new">Add a bookstore</a>
+    </li>
+  </ul>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Collection</th>
+      <th>Created at</th>
+    </thead>
+    <tbody>
+      <% @bookstores.each do |bookstore| %>
+        <tr>
+          <td><%= bookstore.name %></td>
+          <td><%= bookstore.collection.name %></td>
+          <td><%= bookstore.created_at %></td>
+          <td><%= link_to 'More', bookstore_path(bookstore) %></td>
+          <td><%= link_to 'Edit', edit_bookstore_path(bookstore) %></td>
+          <td><%= link_to 'Delete', bookstore_path(bookstore), method: :delete, data: { confirm: "Delete #{bookstore.name} ?" } %></td>
+        </tr>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 </nav>
