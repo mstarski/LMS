@@ -16,6 +16,11 @@ class BookstoresController < ApplicationController
        @bookstore = Bookstore.find(params[:id])
     end
 
+    def edit
+        @bookstore = Bookstore.find(params[:id])
+        @collections = Collection.all
+    end
+
     private
         def bookstore_params
             params.require(:bookstore).permit(:name, :collection_id)

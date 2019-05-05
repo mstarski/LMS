@@ -1,0 +1,12 @@
+<%= form_for @bookstore, url: { action: "update"} do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :collection %>
+    <%= form.select :collection_id, @collections.map { |collection|
+      [collection.name, collection.id] } %>
+  </p>
+  <%= form.submit %>
+<% end %>

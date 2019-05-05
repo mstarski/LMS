@@ -9,6 +9,10 @@ class CollectionsController < ApplicationController
         redirect_to collections_path 
     end
 
+    def edit
+        @collection = Collection.find(params[:id])
+    end
+
     def associated_bookstores
         @collection = Collection.find(params[:col_id])
         @bookstores = @collection.bookstores
