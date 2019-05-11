@@ -1,0 +1,12 @@
+<h1>Edit <%= @collection.name %></h1>
+<%= form_for @collection, url: { action: 'update' } do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :size %>
+    <%= form.number_field :size %>
+  </p>
+  <%= form.submit %>
+<% end %>

@@ -17,6 +17,24 @@ class CollectionsController < ApplicationController
         @collection = Collection.find(params[:id])
     end
 
+    def update
+        @collection = Collection.find(params[:id])
+        if @collection.update_attributes(collection_params)
+            render file: '/app/views/collections/edit_success.html.erb'
+        else
+            render file: '/app/views/collections/edit_failed.html.erb'
+        end
+    end
+
+    def destroy
+        @collection = Collection.find(params[:id])
+        if @collection.destroy
+            render file: '/app/views/collections/delete_success.html.erb'
+        else
+            render file: '/app/views/collections/delete_fail.html.erb'
+        end
+    end
+
     def associated_bookstores
         @collection = Collection.find(params[:col_id])
         @bookstores = @collection.bookstores
