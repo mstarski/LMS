@@ -1,0 +1,12 @@
+<h1>Edit author <%= "#{@author.name} #{@author.surname}" %></h1>
+<%= form_for @author, url: { action: "update" } do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :surname %>
+    <%= form.text_field :surname%>
+  </p>
+  <%= form.submit %>
+<% end %>
