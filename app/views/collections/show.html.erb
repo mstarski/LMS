@@ -1,0 +1,9 @@
+<h1><%= @collection.name %></h1>
+<p>Collection id: <%= @collection.id %></p>
+<p>Capacity: <%= @collection.size %></p>
+<p>
+  <%= link_to 'See books in that collection', get_books_path(@collection) %>
+</p>
+<p>
+  <%= link_to 'See bookstores that offers that collection', associated_bookstores_path(@collection) %>
+</p>

@@ -9,6 +9,10 @@ class CollectionsController < ApplicationController
         redirect_to collections_path 
     end
 
+    def show
+        @collection = Collection.find(params[:id])
+    end
+
     def edit
         @collection = Collection.find(params[:id])
     end

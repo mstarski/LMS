@@ -1,4 +1,4 @@
-<h1>Bookstores that own collection <u><%= @collection.name %></u></h1>
+<h1>Bookstores that own collection <%= link_to "#{@collection.name}", collection_path(@collection) %></h1>
 <ul>
   <% @bookstores.each do |bookstore| %>
     <li>
