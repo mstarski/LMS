@@ -1,4 +1,7 @@
 class BookstoresController < ApplicationController
+    
+    before_action :authenticate_user!
+
     def index
         @bookstores = Bookstore.all
     end

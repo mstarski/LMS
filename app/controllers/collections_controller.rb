@@ -1,4 +1,7 @@
 class CollectionsController < ApplicationController
+
+    before_action :authenticate_user!
+
     def index
         @collections = Collection.all
     end
