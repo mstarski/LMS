@@ -1,24 +1,19 @@
-# README
+# Library Management System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Starting an app
 
-Things you may want to cover:
+To run an application
+```shell
+ $ make init && rails s
+```
+App should be up and running on localhost:3000
 
-* Ruby version
+## Other options:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```shell
+$ make reset #Completely resets the database (it will not be seeded again)
+$ make seed #Seeds the database
+$ make clean-db #Resets and seeds the database
+$ make fonts #Downloads the fonts for the app
+$ make clean #Deletes assets (fonts only right now)
+```
