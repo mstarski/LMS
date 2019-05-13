@@ -1,6 +1,10 @@
 <h1><%= @book.title %></h1>
-<% @book.authors.each do |author| %>
-  <strong><%= "#{author.name} #{author.surname}" %></strong>
+<% unless @book.authors.empty? %>
+  <% @book.authors.each do |author| %>
+    <strong><%= "#{author.name} #{author.surname}" %></strong>
+  <% end %>
+<% else %>
+  <strong>Anonymous</strong>
 <% end %>
 <p>
   Book id: <%= @book.id %>

@@ -22,8 +22,12 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.publish_date %></td>
-        <% book.authors.each do |author| %>
-          <td><%= "#{author.name} #{author.surname}" %></td>
+        <% unless book.authors.empty? %>
+          <% book.authors.each do |author| %>
+            <td><%= "#{author.name} #{author.surname}" %></td>
+          <% end %>
+        <% else %>
+          <td>None</td>
         <% end %>
         <td><%= book.created_at %></td>
         <td><%= link_to 'More', book_path(book) %></td>

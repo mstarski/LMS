@@ -1,4 +1,7 @@
 class BookstoresController < ApplicationController
+    
+    before_action :authenticate_user!
+
     def index
         @bookstores = Bookstore.all
     end
@@ -38,6 +41,16 @@ class BookstoresController < ApplicationController
             render file: '/app/views/books/delete_fail.html.erb'
         end
     end
+
+    def get_collection_name(id)
+        if id == nil
+           "None"
+        else
+            Collection.find(id).name
+        end
+    end
+
+    helper_method :get_collection_name
 
     private
         def bookstore_params

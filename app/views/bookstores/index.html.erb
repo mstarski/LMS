@@ -15,7 +15,7 @@
       <% @bookstores.each do |bookstore| %>
         <tr>
           <td><%= bookstore.name %></td>
-          <td><%= bookstore.collection.name %></td>
+          <td><%= get_collection_name(bookstore.collection_id) %></td>
           <td><%= bookstore.created_at %></td>
           <td><%= link_to 'More', bookstore_path(bookstore) %></td>
           <td><%= link_to 'Edit', edit_bookstore_path(bookstore) %></td>

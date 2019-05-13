@@ -1,4 +1,7 @@
 class PlacementsController < ApplicationController
+    
+    before_action :authenticate_user!
+
     def new
         @placement = Placement.new
         @books = Book.all
