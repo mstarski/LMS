@@ -39,6 +39,16 @@ class BookstoresController < ApplicationController
         end
     end
 
+    def get_collection_name(id)
+        if id == nil
+           "None"
+        else
+            Collection.find(id).name
+        end
+    end
+
+    helper_method :get_collection_name
+
     private
         def bookstore_params
             params.require(:bookstore).permit(:name, :collection_id)

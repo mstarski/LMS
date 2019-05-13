@@ -1,6 +1,8 @@
 <h1><%= @bookstore.name %></h1>
 <p>Bookstore id: <%= @bookstore.id %></p>
 <p>
-  Collection: <%= @bookstore.collection.name %>
-  <%= link_to 'See books in that collection', get_books_path(col_id: @bookstore.collection.id) %>
+  Collection: <%= get_collection_name(@bookstore.collection_id) %>
+  <% if @bookstore.collection_id != nil %>
+    <%= link_to 'See books in that collection', get_books_path(col_id: @bookstore.collection.id) %>
+  <% end%>
 </p>
