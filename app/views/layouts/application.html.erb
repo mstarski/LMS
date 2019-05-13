@@ -12,6 +12,7 @@
       <a href="/">Menu</a>
       <% if user_signed_in? %>
         <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: "Do you want to sign out ?"} %>
+        <p>Logged in as <%= current_user.email %></p>
       <% end %>
     </nav>
     <%= render 'layouts/alerts' %>
