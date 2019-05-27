@@ -8,5 +8,16 @@
     <%= form.select :collection_id, @collections.map { |collection|
       [collection.name, collection.id] } %>
   </p>
+  <div>
+    <strong>Location data</strong>
+    <p>
+      <%= form.label :latitude %>
+      <%= form.text_field :latitude %>
+    </p>
+    <p>
+      <%= form.label :longitude%>
+      <%= form.text_field :longitude %>
+    </p>
+  </div>
   <%= form.submit %>
 <% end %>

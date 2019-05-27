@@ -17,6 +17,12 @@ class BookstoresController < ApplicationController
     
     def show
        @bookstore = Bookstore.find(params[:id])
+       # Pass bookstore coordinates to javascript
+       gon.push({
+           :latitude => @bookstore.latitude,
+           :longitude => @bookstore.longitude,
+           :name => @bookstore.name
+       })
     end
 
     def edit
@@ -54,6 +60,6 @@ class BookstoresController < ApplicationController
 
     private
         def bookstore_params
-            params.require(:bookstore).permit(:name, :collection_id)
+            params.require(:bookstore).permit(:name, :collection_id, :longitude, :latitude)
         end
 end
