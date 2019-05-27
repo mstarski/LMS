@@ -21,6 +21,7 @@ collections.each_with_index { |collection, index|
         book.authors.create(name: Faker::Name.first_name, surname: Faker::Name.last_name)
         book.placements.create(collection_id: index + 1)
     end
-    bookstore = Bookstore.create(name: Faker::Creature::Animal.name.capitalize, collection_id: collection.id)
+    bookstore = Bookstore.create(name: Faker::Creature::Animal.name.capitalize, collection_id: collection.id,
+                latitude: Faker::Address.latitude, longitude: Faker::Address.longitude)
     bookstore.save
 }

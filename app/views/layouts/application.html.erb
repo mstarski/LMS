@@ -4,18 +4,32 @@
     <title>LMS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body class="application-container">
-    <nav class="naviation">
-      <a href="/">Menu</a>
-      <% if user_signed_in? %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: "Do you want to sign out ?"} %>
-        <p>Logged in as <%= current_user.email %></p>
-      <% end %>
-    </nav>
-    <%= render 'layouts/alerts' %>
-    <%= yield %>
-  </body>
-</html>
+    <%= Gon::Base.render_data %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <!--- LEAFLET CSS --->
+    <link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+			integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+			crossorigin=""
+		/>
+    </head>
+    <body id="<%= controller_name %>_<%= action_name %>" class="application-container">
+      <nav class="naviation">
+        <a href="/">Menu</a>
+        <% if user_signed_in? %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, data: { confirm: "Do you want to sign out ?"} %>
+          <p>Logged in as <%= current_user.email %></p>
+        <% end %>
+      </nav>
+      <%= render 'layouts/alerts' %>
+      <%= yield %>
+      <!--- LEAFLET JS --->
+      <script
+			src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+			integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+			crossorigin=""
+      ></script>
+      <%= javascript_include_tag 'application' %>
+    </body>
+  </html>
