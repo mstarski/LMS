@@ -1,4 +1,6 @@
 # Library Management System
+Application that manages various bookstores by having a database with different books, authors, collections etc.
+Written for learning purposes in Ruby on Rails web framework.
 
 ## Starting an app
 
