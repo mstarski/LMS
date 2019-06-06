@@ -19,3 +19,5 @@ $ make clean-db #Resets and seeds the database
 $ make fonts #Downloads the fonts for the app
 $ make clean #Deletes assets (fonts only right now)
 ```
+
+This is my very first RoR application.
